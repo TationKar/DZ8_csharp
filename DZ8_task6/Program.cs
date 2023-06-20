@@ -17,23 +17,17 @@ for (int i = 2; i < rowTriangle; i++)
     pascalInt[i][0] = 1;
     pascalInt[i][i] = 1;
     for (int j = 1; j < i; j++)
-    {
         pascalInt[i][j] = pascalInt[i - 1][j - 1] + pascalInt[i - 1][j];
-    }
 }
 PrintArray(pascalInt);
 void PrintArray(int[][] inArray)
 {
     string centerText = string.Empty;
-    for (int i = 0; i < inArray.GetLength(0); i++)
+    for (int i = 0; i < rowTriangle; i++)
     {
-        for (int j = 0; j < (i + 1); j++)
-        {
-            centerText +=" " + $"{inArray[i][j]}" + " ";
-
-        }
+        centerText = string.Join(" ", inArray[i]);
         int centerX = (Console.WindowWidth / 2) - (centerText.Length / 2);
-        Console.SetCursorPosition(centerX, i+1);
+        Console.SetCursorPosition(centerX, i + 2);
         WriteLine(centerText);
         centerText = string.Empty;
     }
