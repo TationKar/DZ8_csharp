@@ -3,7 +3,7 @@ using System;
 using static System.Console;
 Clear();
 Write("Введите количество строк треугольника Паскаля: ");
-int rowTriangle = int.Parse(ReadLine());
+int rowTriangle = int.Parse(ReadLine()!);
 int[][] pascalInt = new int[rowTriangle][];
 for (int i = 0; i < rowTriangle; i++)
 {
